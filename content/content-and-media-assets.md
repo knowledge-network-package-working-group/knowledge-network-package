@@ -4,7 +4,10 @@ Nodes have `content`. This field holds the node's information as JSON. Rather th
 * We don't need to adhere to a universal structure; all applications are different, and so they need different types of models. 
 * We retain control over the type's properties and styling (how they are displayed on screen), which are then stored to ensure consistent behavior between environments.
 
-At the end, all valid JSON is valid in `content`. However, applications should always check for the node's type, which contain the `scheme` and `scheme_font` fields necessary for schema validation and correct node displaying. More details on [Index Database Schema](index-database-schema.md).
+At the end, all valid JSON is valid in `content`. However, applications should always check for the node's type, which contain the `content_schema` and `content_font` fields necessary for schema validation and correct node displaying. More details on [Index Database Schema](index-database-schema.md).
+
+#### Properties
+Edges can have `properties`. Even when an edge's label can be descriptive enough of a relationship between two nodes, sometimes extra information is required. The same rules from the previously described `content` field apply here too, where `properties_schema` defines the fields necessary for `properties`.
 
 ### Media Assets
 When a node is inserted into the index database, one can specify a dedicated directory to be automatically created for its assets. A node's `content` field can then reference any asset within its own directory using a relative path.
